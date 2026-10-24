@@ -387,7 +387,40 @@ icmp 198.18.0.1:1057   192.168.10.21:1057 203.0.113.10:1057  203.0.113.10:1057
 
 ---
 
-## 7. Break & Fix Challenge
+## 7.Break & Fix Challenge
+
+## Evidence from the Finished Lab
+
+**PAT translation on EDGE (inside global 198.18.0.1)**
+
+![NAT translations](IP%20NAT%20Translation.png)
+
+**Failover: backup default route via ISP2 after Gi0/1 is shut down**
+
+![Failover route](show%20ip%20route%20static.png)
+
+**DHCP snooping binding table on ASW1**
+
+![DHCP snooping binding](ip%20DHCP%20snooping%20binding.png)
+
+**Rogue DHCP server blocked (DHCPOFFER dropped on Fa0/3)**
+
+![Rogue DHCP drops](show%20logging.png)
+
+**Guest ACL hit counts on CORE-SW**
+
+![Guest ACL](show%20access-lists%20GUEST_IN.png)
+
+**Port security violation on ASW1**
+
+![Port security](show%20port-security%20interface%20fa0-1.png)
+
+**SSH login from PC-ADMIN to ASW1**
+
+![SSH login](Login%20SSH%20to%20ASW1.png)
+
+---
+
 
 These faults were all hit while building the lab. Apply one at a time. Learners must find the cause using `show` commands only.
 
